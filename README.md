@@ -33,6 +33,41 @@ Subject to:
 2. $0.04x_1 + 0.08x_2 + 0.10x_3 - S_1 + A_2 = 6$
 3. $0.02x_1 + 0.01x_2 + 0.05x_3 + S_2 = 3$
 
+
+   # Transportation Problem Solver: VAM & MODI Method
+
+This repository contains a Python implementation of **Vogel’s Approximation Method (VAM)** to find an Initial Basic Feasible Solution (IBFS), and the **MODI (Modified Distribution) Method** to test for optimality in a Transportation Optimization Problem.
+
+## Case Study: Global Rare Earth Element (REE) Distribution
+A logistics consortium must distribute neodymium (a critical rare earth element) from three global mining/refining sources to four major high-tech manufacturing hubs. The goal is to meet all destination demands without exceeding source capacities, while minimizing the total global shipping cost.
+
+### Mathematical Formulation
+
+**Sources (Supply Capacity in tons):**
+* $S_1$: Texas, USA (300)
+* $S_2$: Western Australia (500)
+* $S_3$: Inner Mongolia, China (400)
+
+**Destinations (Demand in tons):**
+* $D_1$: Shenzhen, China (250)
+* $D_2$: Stuttgart, Germany (350)
+* $D_3$: Seoul, South Korea (400)
+* $D_4$: Kyoto, Japan (200)
+
+**Cost Matrix (in $10,000s per ton):**
+| Source \ Destination | D1 (Shenzhen) | D2 (Stuttgart) | D3 (Seoul) | D4 (Kyoto) |
+| :--- | :--- | :--- | :--- | :--- |
+| **S1 (Texas)** | 12 | 10 | 15 | 14 |
+| **S2 (W. Australia)** | 8 | 11 | 9 | 7 |
+| **S3 (Inner Mongolia)** | 5 | 14 | 8 | 12 |
+
+### Objective & Constraints
+**Minimize:** Total Transportation Cost ($Z = \sum \sum c_{ij} x_{ij}$)
+**Subject to:**
+1. $\sum x_{ij} = \text{Supply}_i$ (Supply constraints)
+2. $\sum x_{ij} = \text{Demand}_j$ (Demand constraints)
+3. $x_{ij} \ge 0$ (Non-negativity)
+
 ## Installation and Setup
 
 1. Clone the repository:
