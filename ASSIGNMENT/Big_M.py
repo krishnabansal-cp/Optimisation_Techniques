@@ -82,7 +82,7 @@ def solve_big_m():
     print(f"Raw Material 1 (x1): {results['x1']:.2f} kg")
     print(f"Raw Material 2 (x2): {results['x2']:.2f} kg")
     print(f"Raw Material 3 (x3): {results['x3']:.2f} kg")
-    print(f"Minimum Total Cost: ${optimal_cost:.2f}")
+    print(f"Minimum Total Cost: ${abs(optimal_cost):.2f}")
     print("==================================")
 
 if __name__ == "__main__":
